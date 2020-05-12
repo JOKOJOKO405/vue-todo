@@ -1,0 +1,119 @@
+@import 'variables';
+
+html,body{
+  height: 100%;
+}
+body{
+  background: linear-gradient($gradient) no-repeat;
+  font-family: $font;
+  font-size: $txt;
+  line-height: $lineHgt;
+  color: $txt-col;
+}
+#wrapper{
+  @include wrapper;
+
+  h1{
+    text-align: $cent;
+    font-size: $h1;
+    line-height: 1.2;
+  }
+
+  .filter-container{
+    @include flexSetting(center, center);
+    width: 100%;
+    margin: 30px auto;
+    li{
+      .filter-btn{
+        @include btn;
+        background: $fff;
+        color: $main-blue;
+        border: 1px solid $main-blue;
+        &.active{
+          background: $main-blue;
+          color: $fff;
+
+        }
+      }
+      &:not(:last-child){
+        margin-right: 50px;
+      }
+    }
+  }
+
+  .input-area{
+    width: 100%;
+    @include flexSetting(speace-between, center);
+    background: $fff;
+    padding: 15px 20px;
+    label{
+      margin-right: 20px;
+      line-height: 1.2;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    input{
+      padding: 10px 10px 5px;
+      line-height: 1.7;
+      border: none;
+      background: $light-gr;
+      margin-right: 20px;
+      width: calc(100% - 40px);
+    }
+    button{
+      @include btn;
+      background: $main-yellow;
+    }
+  }
+
+  .todos-container{
+    margin-top: 30px;
+    .todo-enter-active, .todo-leave-active{
+      transition: all .4s;
+    }
+    .todo-enter, .todo-leave-to{
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    li{
+      @include flexSetting(flex-start, center);
+      background: $fff;
+      padding: 15px 20px;
+      margin-top: 2px;
+      .filter-check{
+        transform: scale(1.5);
+        display: block;
+        margin-right: 15px;
+      }
+      .txt{
+        line-height: 1.7;
+        padding: 5px 5px 0;
+        margin-right: 15px;
+        width: calc(100% - 195px);
+      }
+      .time{
+        margin-right: 15px;
+        font-size: 14px;
+        width: 150px;
+        color: $dark-gr;
+      }
+      .edit-input{
+        border: none;
+        padding: 5px 10px 0;
+        background: $light-gr;
+        margin-right: 15px;
+        line-height: 1.7;
+      }
+      .del-btn{
+        @include btn;
+        font-size: 12px;
+        background: $del-btn;
+      }
+      .rewrite-btn{
+        @include btn;
+        font-size: 12px;
+        background: $main-yellow;
+      }
+    }
+  }
+}

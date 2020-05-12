@@ -1,0 +1,55 @@
+@charset 'UTF-8';
+
+// color
+$main-blue: #7cd8ef;
+$main-yellow: #f9e665;
+$del-btn: #66e4a9;
+$txt-col: #4f5657;
+$fff: #fff;
+$light-gr: #f8f8f8;
+$dark-gr: #768183;
+$gradient: 181.05205799878217deg, rgba(255, 255, 232,1) 21.8184421534937%,rgba(254, 255, 232,1) 21.8184421534937%,rgba(217, 255, 252,1) 58.69845360824742%,rgba(222, 255, 239,1) 90.4324169530355%;
+
+// font
+$font: 'Baloo Tamma 2', cursive, "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+$txt: 16px;
+$lineHgt: 1.5;
+$h1: 40px;
+
+// position
+$cent: center;
+$basic: 0 auto;
+$width: 840px;
+$wrapperTop: 100px auto;
+
+// foundation
+$wrapperBg: rgba($fff, 0.3);
+$shadow: 0 0 30px 0 rgba($txt-col, 0.1);
+
+// mixin
+@mixin btn {
+  text-align: $cent;
+  font-weight: bold;
+  padding: 10px 15px 8px;
+  display: inline-block;
+  border-radius: 4px;
+  color: $fff;
+  &:hover{
+    transition: all .3s ease-in;
+  }
+}
+
+@mixin wrapper {
+  width: $width;
+  margin: $wrapperTop;
+  background: $wrapperBg;
+  box-shadow: $shadow;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+@mixin flexSetting($pos, $item) {
+  display: flex;
+  justify-content: $pos;
+  align-items: $item;
+}

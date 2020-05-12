@@ -1,0 +1,179 @@
+@charset "UTF-8";
+html, body {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(181.05206deg, #ffffe8 21.81844%, #feffe8 21.81844%, #d9fffc 58.69845%, #deffef 90.43242%) no-repeat;
+  font-family: "Baloo Tamma 2", cursive, "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4f5657;
+}
+
+#wrapper {
+  width: 840px;
+  margin: 100px auto;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 30px 0 rgba(79, 86, 87, 0.1);
+  padding: 50px;
+  border-radius: 10px;
+}
+
+#wrapper h1 {
+  text-align: center;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+#wrapper .filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 30px auto;
+}
+
+#wrapper .filter-container li .filter-btn {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 15px 8px;
+  display: inline-block;
+  border-radius: 4px;
+  color: #fff;
+  background: #fff;
+  color: #7cd8ef;
+  border: 1px solid #7cd8ef;
+}
+
+#wrapper .filter-container li .filter-btn:hover {
+  transition: all .3s ease-in;
+}
+
+#wrapper .filter-container li .filter-btn.active {
+  background: #7cd8ef;
+  color: #fff;
+}
+
+#wrapper .filter-container li:not(:last-child) {
+  margin-right: 50px;
+}
+
+#wrapper .input-area {
+  width: 100%;
+  display: flex;
+  justify-content: speace-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px 20px;
+}
+
+#wrapper .input-area label {
+  margin-right: 20px;
+  line-height: 1.2;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#wrapper .input-area input {
+  padding: 10px 10px 5px;
+  line-height: 1.7;
+  border: none;
+  background: #f8f8f8;
+  margin-right: 20px;
+  width: calc(100% - 40px);
+}
+
+#wrapper .input-area button {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 15px 8px;
+  display: inline-block;
+  border-radius: 4px;
+  color: #fff;
+  background: #f9e665;
+}
+
+#wrapper .input-area button:hover {
+  transition: all .3s ease-in;
+}
+
+#wrapper .todos-container {
+  margin-top: 30px;
+}
+
+#wrapper .todos-container .todo-enter-active, #wrapper .todos-container .todo-leave-active {
+  transition: all .4s;
+}
+
+#wrapper .todos-container .todo-enter, #wrapper .todos-container .todo-leave-to {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+#wrapper .todos-container li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+  padding: 15px 20px;
+  margin-top: 2px;
+}
+
+#wrapper .todos-container li .filter-check {
+  transform: scale(1.5);
+  display: block;
+  margin-right: 15px;
+}
+
+#wrapper .todos-container li .txt {
+  line-height: 1.7;
+  padding: 5px 5px 0;
+  margin-right: 15px;
+  width: calc(100% - 195px);
+}
+
+#wrapper .todos-container li .time {
+  margin-right: 15px;
+  font-size: 14px;
+  width: 150px;
+  color: #768183;
+}
+
+#wrapper .todos-container li .edit-input {
+  border: none;
+  padding: 5px 10px 0;
+  background: #f8f8f8;
+  margin-right: 15px;
+  line-height: 1.7;
+}
+
+#wrapper .todos-container li .del-btn {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 15px 8px;
+  display: inline-block;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  background: #66e4a9;
+}
+
+#wrapper .todos-container li .del-btn:hover {
+  transition: all .3s ease-in;
+}
+
+#wrapper .todos-container li .rewrite-btn {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 15px 8px;
+  display: inline-block;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  background: #f9e665;
+}
+
+#wrapper .todos-container li .rewrite-btn:hover {
+  transition: all .3s ease-in;
+}

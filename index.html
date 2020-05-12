@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/import.css">
+  <title>TODO LIST</title>
+</head>
+<body>
+  <div id="wrapper">
+    <h1>My Todos</h1>
+    <!-- filter-button -->
+    <ul class="filter-container">
+      <li><button class="filter-btn" @click="setState('progress')" v-bind:class="{'active': state === 'progress'}">progress</button></li>
+      <li><button class="filter-btn" @click="setState('done')" v-bind:class="{'active': state === 'done'}">done</button></li>
+    </ul>
+    <!-- todo input area -->
+    <form class="input-area" action="" @submit.prevent="handleTodoSubmit">
+      <label for="todo-text">TODO</label>
+      <input id="todo-text" type="text" placeholder="add todo here" v-model="text">
+      <button v-bind:disabled="disableBtn">Regist</button>
+    </form>
+    <!-- todos -->
+    <div>
+      <transition-group name="todo" tag="ul" class="todos-container">
+        <li v-for="todo in filterTodos" v-bind:key="todo.id">
+          <input type="checkbox" class="filter-check" v-model="todo.done">
+          <p class="txt" v-if="todo.edit"><input type="text" class="edit-input" v-model="todo.text"><button @click="isSave(todo.id)" class="rewrite-btn">Rewrite</button></p>
+          <p class="txt" v-else @click="isEdit(todo.id)">{{ todo.text }}</p>
+          <p class="time">{{ formatData(todo.createdAt) }}</p>
+          <button class="del-btn" @click="isDelete(todo.id)">Delete</button>
+        </li>
+      </transition-group>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
